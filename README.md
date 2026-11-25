@@ -17,8 +17,12 @@ PHP 8.2+, Laravel 12/13, Filament 5.x, `awcodes/filament-curator` 5.x
 composer require baris-dev/filament-media-library
 php artisan media-library:install
 ```
-Kurulum komutu config'i yayınlar, migration'ı çalıştırır, asset'leri günceller ve veritabanınızda
-medya tutan kolonları (`image`, `logo`, `cover`, `gallery`...) bulup kullanım haritasına eklemeyi önerir.
+Kurulum komutu config'i yayınlar, Curator tablosu yoksa `curator:install` çalıştırır, `is_active`
+migration'ını (Curator'ınkinden sonra çalışacak tarihle) yayınlayıp migrate eder, asset'leri günceller ve
+veritabanınızda medya tutan kolonları (`image`, `logo`, `cover`, `gallery`...) bulup kullanım haritasına eklemeyi önerir.
+
+> `php artisan vendor:publish --provider="Awcodes\Curator\CuratorServiceProvider"` ile Curator'ın görünümlerini
+> yayınlamayın: `resources/views/vendor/curator` altındaki dosyalar paketin seçici (picker) görünümünü ezer.
 
 Panel sağlayıcınıza tek satır ekleyin:
 ```php

@@ -36,9 +36,7 @@ class InstallCommand extends Command
         ]);
         $this->components->task('config/media_library.php yayınlandı');
 
-        if (confirm('Migration çalıştırılsın mı? (curator tablosuna is_active ekler)', true)) {
-            $this->call('migrate');
-        }
+        $this->ensureMigrations();
 
         $this->callSilently('filament:assets');
         $this->components->task('Filament asset\'leri güncellendi');
@@ -57,6 +55,48 @@ class InstallCommand extends Command
         $this->line("    MediaLibrary::track(Post::class, 'cover_image')->editedBy(PostResource::class, 'slug');");
 
         return self::SUCCESS;
+    }
+
+    /**
+     * Curator tablosunu (yoksa) kurar, ardından is_active migration'ını Curator'ınkinden
+     * SONRA çalışacak bir tarihle yayınlar ve migrate'i çalıştırır.
+     */
+    protected function ensureMigrations(): void
+    {
+        $dir = database_path('migrations');
+        $files = glob($dir.'/*.php') ?: [];
+        $has = function (string $needle) use (&$files): bool {
+            return collect($files)->contains(fn ($f) => str_contains(basename($f), $needle));
+        };
+
+        if (! Schema::hasTable('curator') && ! $has('_create_curator_table')) {
+            $this->components->info('Curator migration\'ı bulunamadı; curator:install çalıştırılıyor...');
+            $this->call('curator:install');
+            $files = glob($dir.'/*.php') ?: [];
+        }
+
+        if (! $has('_add_is_active_to_curator_table') && ! (Schema::hasTable('curator') && Schema::hasColumn('curator', 'is_active'))) {
+            $latest = collect($files)
+                ->map(fn ($f) => substr(basename($f), 0, 17))
+                ->filter(fn ($p) => preg_match('/^\d{4}_\d{2}_\d{2}_\d{6}$/', $p))
+                ->max();
+
+            $timestamp = now();
+            if ($latest) {
+                $last = \Carbon\Carbon::createFromFormat('Y_m_d_His', $latest);
+                if ($last && $last->greaterThanOrEqualTo($timestamp)) {
+                    $timestamp = $last->addSecond();
+                }
+            }
+
+            $target = $dir.'/'.$timestamp->format('Y_m_d_His').'_add_is_active_to_curator_table.php';
+            copy(__DIR__.'/../../database/migrations/add_is_active_to_curator_table.php.stub', $target);
+            $this->components->task('is_active migration\'ı yayınlandı');
+        }
+
+        if (confirm('Migration çalıştırılsın mı?', true)) {
+            $this->call('migrate');
+        }
     }
 
     protected function suggestSources(): void

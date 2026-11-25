@@ -5,6 +5,7 @@ namespace BarisDev\MediaLibrary;
 use Awcodes\Curator\Facades\Curator;
 use Filament\Support\Assets\Css;
 use Filament\Support\Facades\FilamentAsset;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
@@ -36,7 +37,12 @@ class MediaLibraryServiceProvider extends ServiceProvider
         $this->loadViewsFrom($root.'/resources/views', 'media-library');
         View::prependNamespace('curator', $root.'/resources/views/curator');
 
-        $this->loadMigrationsFrom($root.'/database/migrations');
+        // <x-media-library.folder-icon /> gibi anonim bileşenler için.
+        Blade::anonymousComponentPath($root.'/resources/views/components');
+
+        // Migration bilinçli olarak loadMigrationsFrom ile YÜKLENMEZ: Curator'ın tablosu
+        // `curator:install` ile kurulum günündeki tarihle oluşur; bizimki ondan sonra
+        // çalışmalı. media-library:install (veya vendor:publish) güncel tarihle yayınlar.
 
         FilamentAsset::register([
             Css::make('media-library', $root.'/resources/dist/media-library.css'),
@@ -53,7 +59,9 @@ class MediaLibraryServiceProvider extends ServiceProvider
 
             $this->publishes([$root.'/config/media_library.php' => config_path('media_library.php')], 'media-library-config');
             $this->publishes([$root.'/resources/views' => resource_path('views/vendor/media-library')], 'media-library-views');
-            $this->publishes([$root.'/database/migrations' => database_path('migrations')], 'media-library-migrations');
+            $this->publishes([
+                $root.'/database/migrations/add_is_active_to_curator_table.php.stub' => database_path('migrations/'.date('Y_m_d_His').'_add_is_active_to_curator_table.php'),
+            ], 'media-library-migrations');
         }
     }
 

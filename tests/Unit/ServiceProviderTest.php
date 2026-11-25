@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\View;
 use BarisDev\MediaLibrary\Filament\CuratorMediaResource;
 use BarisDev\MediaLibrary\Models\Media;
@@ -37,3 +38,11 @@ function normalizePath(string $p): string
 {
     return str_replace(chr(92), '/', $p);
 }
+
+it('renders the folder icon component used by the views', function () {
+    $empty = Blade::render('<x-media-library.folder-icon class="x" />');
+    $filled = Blade::render('<x-media-library.folder-icon :filled="true" />');
+
+    expect($empty)->toContain('ml-folder-svg')->toContain('class="ml-folder-svg x"')->not->toContain('ml-folder-paper')
+        ->and($filled)->toContain('ml-folder-paper');
+});
