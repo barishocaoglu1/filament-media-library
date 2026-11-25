@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\View;
-use Tachyon\MediaLibrary\Filament\CuratorMediaResource;
-use Tachyon\MediaLibrary\Models\Media;
+use BarisDev\MediaLibrary\Filament\CuratorMediaResource;
+use BarisDev\MediaLibrary\Models\Media;
 
 it('configures curator to use the package classes', function () {
     expect(config('curator.model'))->toBe(Media::class)

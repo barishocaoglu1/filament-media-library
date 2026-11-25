@@ -1,8 +1,8 @@
 <?php
 
-namespace Tachyon\MediaLibrary\Filament\Actions;
+namespace BarisDev\MediaLibrary\Filament\Actions;
 
-use Tachyon\MediaLibrary\Filament\MediaDirectoryManager;
+use BarisDev\MediaLibrary\Filament\MediaDirectoryManager;
 use Awcodes\Curator\Actions\MultiUploadAction as CuratorMultiUploadAction;
 use Awcodes\Curator\Components\Forms\Uploader;
 use Awcodes\Curator\Facades\Curator;

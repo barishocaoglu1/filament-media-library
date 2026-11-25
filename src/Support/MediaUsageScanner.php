@@ -1,8 +1,8 @@
 <?php
 
-namespace Tachyon\MediaLibrary\Support;
+namespace BarisDev\MediaLibrary\Support;
 
-use Tachyon\MediaLibrary\Models\Media;
+use BarisDev\MediaLibrary\Models\Media;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Throwable;
@@ -47,7 +47,7 @@ class MediaUsageScanner
         $this->map = [];
         $this->unresolvedPaths = [];
 
-        foreach (\Tachyon\MediaLibrary\MediaLibrary::usageSources() as $source) {
+        foreach (\BarisDev\MediaLibrary\MediaLibrary::usageSources() as $source) {
             $this->scanTable($source);
         }
 

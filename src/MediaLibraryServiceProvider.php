@@ -1,6 +1,6 @@
 <?php
 
-namespace Tachyon\MediaLibrary;
+namespace BarisDev\MediaLibrary;
 
 use Awcodes\Curator\Facades\Curator;
 use Filament\Support\Assets\Css;
@@ -8,18 +8,18 @@ use Filament\Support\Facades\FilamentAsset;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
-use Tachyon\MediaLibrary\Console\ImportUntrackedMedia;
-use Tachyon\MediaLibrary\Console\InstallCommand;
-use Tachyon\MediaLibrary\Filament\Components\CuratorPanel;
-use Tachyon\MediaLibrary\Filament\CuratorMediaResource;
-use Tachyon\MediaLibrary\Filament\Pages\EditMedia;
-use Tachyon\MediaLibrary\Filament\Pages\ListMedia;
-use Tachyon\MediaLibrary\Filament\Schemas\MediaForm;
-use Tachyon\MediaLibrary\Models\Media;
+use BarisDev\MediaLibrary\Console\ImportUntrackedMedia;
+use BarisDev\MediaLibrary\Console\InstallCommand;
+use BarisDev\MediaLibrary\Filament\Components\CuratorPanel;
+use BarisDev\MediaLibrary\Filament\CuratorMediaResource;
+use BarisDev\MediaLibrary\Filament\Pages\EditMedia;
+use BarisDev\MediaLibrary\Filament\Pages\ListMedia;
+use BarisDev\MediaLibrary\Filament\Schemas\MediaForm;
+use BarisDev\MediaLibrary\Models\Media;
 
 class MediaLibraryServiceProvider extends ServiceProvider
 {
-    public const PACKAGE = 'tachyon/filament-media-library';
+    public const PACKAGE = 'baris-dev/filament-media-library';
 
     public function register(): void
     {

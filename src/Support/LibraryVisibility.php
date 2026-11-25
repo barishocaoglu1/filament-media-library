@@ -1,6 +1,6 @@
 <?php
 
-namespace Tachyon\MediaLibrary\Support;
+namespace BarisDev\MediaLibrary\Support;
 
 use Illuminate\Database\Eloquent\Builder;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace Tachyon\MediaLibrary\Console;
+namespace BarisDev\MediaLibrary\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
-use Tachyon\MediaLibrary\MediaLibraryServiceProvider;
+use BarisDev\MediaLibrary\MediaLibraryServiceProvider;
 
 use function Laravel\Prompts\confirm;
 use function Laravel\Prompts\multiselect;
@@ -51,7 +51,7 @@ class InstallCommand extends Command
 
         $this->newLine();
         $this->components->info('Son adım: panel sağlayıcınıza (ör. AdminPanelProvider) ekleyin:');
-        $this->line('    ->plugin(\\Tachyon\\MediaLibrary\\MediaLibraryPlugin::make())');
+        $this->line('    ->plugin(\\BarisDev\\MediaLibrary\\MediaLibraryPlugin::make())');
         $this->newLine();
         $this->line('Yeni medya alanı eklemek için config/media_library.php → usage veya:');
         $this->line("    MediaLibrary::track(Post::class, 'cover_image')->editedBy(PostResource::class, 'slug');");

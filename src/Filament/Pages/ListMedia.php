@@ -1,15 +1,15 @@
 <?php
 
-namespace Tachyon\MediaLibrary\Filament\Pages;
+namespace BarisDev\MediaLibrary\Filament\Pages;
 
-use Tachyon\MediaLibrary\Filament\Actions\MultiUploadAction;
-use Tachyon\MediaLibrary\Filament\CuratorMediaResource;
-use Tachyon\MediaLibrary\Filament\MediaDirectoryManager;
-use Tachyon\MediaLibrary\Models\Media;
-use Tachyon\MediaLibrary\Support\LibraryVisibility;
-use Tachyon\MediaLibrary\Support\MediaDeleter;
-use Tachyon\MediaLibrary\Support\MediaUsageScanner;
-use Tachyon\MediaLibrary\Support\UntrackedMediaImporter;
+use BarisDev\MediaLibrary\Filament\Actions\MultiUploadAction;
+use BarisDev\MediaLibrary\Filament\CuratorMediaResource;
+use BarisDev\MediaLibrary\Filament\MediaDirectoryManager;
+use BarisDev\MediaLibrary\Models\Media;
+use BarisDev\MediaLibrary\Support\LibraryVisibility;
+use BarisDev\MediaLibrary\Support\MediaDeleter;
+use BarisDev\MediaLibrary\Support\MediaUsageScanner;
+use BarisDev\MediaLibrary\Support\UntrackedMediaImporter;
 use Filament\Actions\Action;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;

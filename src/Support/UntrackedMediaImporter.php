@@ -1,8 +1,8 @@
 <?php
 
-namespace Tachyon\MediaLibrary\Support;
+namespace BarisDev\MediaLibrary\Support;
 
-use Tachyon\MediaLibrary\Models\Media;
+use BarisDev\MediaLibrary\Models\Media;
 use Illuminate\Support\Facades\Storage;
 use Throwable;
 

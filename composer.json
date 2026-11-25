@@ -1,5 +1,5 @@
 {
-    "name": "tachyon/filament-media-library",
+    "name": "baris-dev/filament-media-library",
     "description": "Filament Curator için klasör gezintili, kullanım takipli ve güvenli silmeli medya kütüphanesi eklentisi.",
     "keywords": ["laravel", "filament", "curator", "media", "media-library"],
     "type": "library",
@@ -16,18 +16,18 @@
     },
     "autoload": {
         "psr-4": {
-            "Tachyon\\MediaLibrary\\": "src/"
+            "BarisDev\\MediaLibrary\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tachyon\\MediaLibrary\\Tests\\": "tests/"
+            "BarisDev\\MediaLibrary\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Tachyon\\MediaLibrary\\MediaLibraryServiceProvider"
+                "BarisDev\\MediaLibrary\\MediaLibraryServiceProvider"
             ]
         }
     },

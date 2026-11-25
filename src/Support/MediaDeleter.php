@@ -1,8 +1,8 @@
 <?php
 
-namespace Tachyon\MediaLibrary\Support;
+namespace BarisDev\MediaLibrary\Support;
 
-use Tachyon\MediaLibrary\Models\Media;
+use BarisDev\MediaLibrary\Models\Media;
 use Awcodes\Curator\Facades\Glide;
 use Illuminate\Support\Facades\Storage;
 use Throwable;
@@ -31,7 +31,7 @@ class MediaDeleter
 
         // Kullanım haritası ayarı yoksa (örn. eski config önbelleği) her dosya
         // "kullanılmıyor" görünür; bu durumda hiçbir şey silinmez.
-        if (blank(\Tachyon\MediaLibrary\MediaLibrary::usageSources())) {
+        if (blank(\BarisDev\MediaLibrary\MediaLibrary::usageSources())) {
             report(new \RuntimeException('Kullanım haritası tanımlı değil (media_library.usage / MediaLibrary::track); silme durduruldu.'));
 
             return ['deleted' => [], 'blocked' => [], 'errors' => array_values(array_map('intval', $ids))];

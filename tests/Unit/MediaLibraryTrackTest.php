@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Eloquent\Model;
-use Tachyon\MediaLibrary\MediaLibrary;
+use BarisDev\MediaLibrary\MediaLibrary;
 
 class FakePost extends Model
 {

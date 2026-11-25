@@ -14,7 +14,7 @@ PHP 8.2+, Laravel 12/13, Filament 5.x, `awcodes/filament-curator` 5.x
 
 ## Kurulum
 ```bash
-composer require tachyon/filament-media-library
+composer require baris-dev/filament-media-library
 php artisan media-library:install
 ```
 Kurulum komutu config'i yayınlar, migration'ı çalıştırır, asset'leri günceller ve veritabanınızda
@@ -22,7 +22,7 @@ medya tutan kolonları (`image`, `logo`, `cover`, `gallery`...) bulup kullanım 
 
 Panel sağlayıcınıza tek satır ekleyin:
 ```php
-->plugin(\Tachyon\MediaLibrary\MediaLibraryPlugin::make())
+->plugin(\BarisDev\MediaLibrary\MediaLibraryPlugin::make())
 // isteğe bağlı: ->plugin(MediaLibraryPlugin::make()->label('Medya')->pluralLabel('Medya Kütüphanesi')->navigationIcon('heroicon-o-photo'))
 ```
 `config/curator.php` veya `AppServiceProvider` düzenlemek **gerekmez**; paket Curator'ı kendisi yapılandırır
@@ -33,7 +33,7 @@ Medya kullanan her tablo/kolon bir kez tanımlanır. Tanımlamazsanız o alandak
 
 **1) Kodla** (örn. `AppServiceProvider::boot()`):
 ```php
-use Tachyon\MediaLibrary\MediaLibrary;
+use BarisDev\MediaLibrary\MediaLibrary;
 
 MediaLibrary::track(Post::class, 'cover_image')->editedBy(PostResource::class, 'slug');
 MediaLibrary::track(Post::class, 'gallery', 'ids', label: 'Yazı galeri');

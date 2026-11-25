@@ -1,10 +1,10 @@
 <?php
 
-namespace Tachyon\MediaLibrary\Filament\Pages;
+namespace BarisDev\MediaLibrary\Filament\Pages;
 
-use Tachyon\MediaLibrary\Filament\CuratorMediaResource;
-use Tachyon\MediaLibrary\Support\MediaDeleter;
-use Tachyon\MediaLibrary\Support\MediaUsageScanner;
+use BarisDev\MediaLibrary\Filament\CuratorMediaResource;
+use BarisDev\MediaLibrary\Support\MediaDeleter;
+use BarisDev\MediaLibrary\Support\MediaUsageScanner;
 use Awcodes\Curator\Resources\Media\Pages\EditMedia as CuratorEditMedia;
 use Filament\Actions\Action;
 use Filament\Notifications\Notification;

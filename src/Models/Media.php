@@ -1,6 +1,6 @@
 <?php
 
-namespace Tachyon\MediaLibrary\Models;
+namespace BarisDev\MediaLibrary\Models;
 
 use Awcodes\Curator\Models\Media as CuratorMedia;
 use Illuminate\Database\Eloquent\Casts\Attribute;

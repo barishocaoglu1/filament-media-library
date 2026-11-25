@@ -1,12 +1,12 @@
 <?php
 
-namespace Tachyon\MediaLibrary\Filament\Components;
+namespace BarisDev\MediaLibrary\Filament\Components;
 
-use Tachyon\MediaLibrary\Filament\MediaDirectoryManager;
-use Tachyon\MediaLibrary\Models\Media;
-use Tachyon\MediaLibrary\Support\LibraryVisibility;
-use Tachyon\MediaLibrary\Support\MediaDeleter;
-use Tachyon\MediaLibrary\Support\MediaUsageScanner;
+use BarisDev\MediaLibrary\Filament\MediaDirectoryManager;
+use BarisDev\MediaLibrary\Models\Media;
+use BarisDev\MediaLibrary\Support\LibraryVisibility;
+use BarisDev\MediaLibrary\Support\MediaDeleter;
+use BarisDev\MediaLibrary\Support\MediaUsageScanner;
 use Awcodes\Curator\Components\Forms\Uploader;
 use Awcodes\Curator\Components\Modals\CuratorPanel as BaseCuratorPanel;
 use Awcodes\Curator\Enums\MimeType;

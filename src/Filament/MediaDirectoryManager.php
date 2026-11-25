@@ -1,8 +1,8 @@
 <?php
 
-namespace Tachyon\MediaLibrary\Filament;
+namespace BarisDev\MediaLibrary\Filament;
 
-use Tachyon\MediaLibrary\Models\Media;
+use BarisDev\MediaLibrary\Models\Media;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;

@@ -1,9 +1,9 @@
 <?php
 
-namespace Tachyon\MediaLibrary\Filament;
+namespace BarisDev\MediaLibrary\Filament;
 
-use Tachyon\MediaLibrary\Filament\Pages\EditMedia;
-use Tachyon\MediaLibrary\Filament\Pages\ListMedia;
+use BarisDev\MediaLibrary\Filament\Pages\EditMedia;
+use BarisDev\MediaLibrary\Filament\Pages\ListMedia;
 use Awcodes\Curator\Resources\Media\MediaResource;
 use Awcodes\Curator\Resources\Media\Pages\CreateMedia;
 use Awcodes\Curator\Resources\Media\Tables\MediaTable;

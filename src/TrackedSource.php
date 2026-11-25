@@ -1,6 +1,6 @@
 <?php
 
-namespace Tachyon\MediaLibrary;
+namespace BarisDev\MediaLibrary;
 
 class TrackedSource
 {

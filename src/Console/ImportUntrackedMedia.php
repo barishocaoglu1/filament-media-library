@@ -1,8 +1,8 @@
 <?php
 
-namespace Tachyon\MediaLibrary\Console;
+namespace BarisDev\MediaLibrary\Console;
 
-use Tachyon\MediaLibrary\Support\UntrackedMediaImporter;
+use BarisDev\MediaLibrary\Support\UntrackedMediaImporter;
 use Illuminate\Console\Command;
 
 class ImportUntrackedMedia extends Command

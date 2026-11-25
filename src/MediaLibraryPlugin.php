@@ -1,6 +1,6 @@
 <?php
 
-namespace Tachyon\MediaLibrary;
+namespace BarisDev\MediaLibrary;
 
 use Awcodes\Curator\CuratorPlugin;
 use Filament\Contracts\Plugin;

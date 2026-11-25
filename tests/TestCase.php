@@ -1,6 +1,6 @@
 <?php
 
-namespace Tachyon\MediaLibrary\Tests;
+namespace BarisDev\MediaLibrary\Tests;
 
 use Awcodes\Curator\CuratorServiceProvider;
 use Filament\Actions\ActionsServiceProvider;
@@ -15,8 +15,8 @@ use Filament\Tables\TablesServiceProvider;
 use Filament\Widgets\WidgetsServiceProvider;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Tachyon\MediaLibrary\MediaLibrary;
-use Tachyon\MediaLibrary\MediaLibraryServiceProvider;
+use BarisDev\MediaLibrary\MediaLibrary;
+use BarisDev\MediaLibrary\MediaLibraryServiceProvider;
 
 abstract class TestCase extends Orchestra
 {

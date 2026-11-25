@@ -1,8 +1,8 @@
 <?php
 
-namespace Tachyon\MediaLibrary\Filament\Schemas;
+namespace BarisDev\MediaLibrary\Filament\Schemas;
 
-use Tachyon\MediaLibrary\Filament\MediaDirectoryManager;
+use BarisDev\MediaLibrary\Filament\MediaDirectoryManager;
 use Awcodes\Curator\Components\Forms\Uploader;
 use Awcodes\Curator\Resources\Media\Schemas\MediaForm as CuratorMediaForm;
 use Filament\Forms\Components\Select;
